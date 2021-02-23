@@ -147,7 +147,7 @@ module Madness
     # http://stackoverflow.com/questions/37771279/prevent-double-escaping-with-coderay-and-rdiscount
     def syntax_highlight(html)
       line_numbers = config.line_numbers ? :table : nil
-      opts = { css: :style, wrap: nil, line_numbers: line_numbers }
+      opts = { css: :class, wrap: nil, line_numbers: line_numbers }
       html.gsub(/\<code class="language-(.+?)"\>(.+?)\<\/code\>/m) do
         lang, code = $1, $2
         code = CGI.unescapeHTML code
